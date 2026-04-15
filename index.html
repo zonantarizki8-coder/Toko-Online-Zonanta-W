@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online-24312115_Rizki Zonanta W</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1D4ED8;
+            --primary-light: #60A5FA;
+            --primary-pale: #EFF6FF;
+            --accent: #0F172A;
+            --text: #1E293B;
+            --text-muted: #64748B;
+            --bg-white: #FFFFFF;
+            --bg-light: #F8FAFC;
+            --border: #E2E8F0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text);
+            overflow-x: hidden;
+            background: var(--bg-white);
+        }
+
+        /* ==================== NAVBAR ==================== */
+        .navbar {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 0;
+            transition: box-shadow 0.3s ease;
+        }
+        .navbar.scrolled {
+            box-shadow: 0 4px 30px rgba(37,99,235,0.08);
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.35rem;
+            color: var(--accent) !important;
+            letter-spacing: -0.5px;
+        }
+        .navbar-brand span { color: var(--primary); }
+        .nav-link {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--text) !important;
+            padding: 8px 18px !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+            background: var(--primary-pale);
+        }
+        .navbar-toggler { border: none; }
+        .navbar-toggler:focus { box-shadow: none; }
+
+        /* ==================== HERO ==================== */
+        .hero-section {
+            padding: 140px 0 100px;
+            background: linear-gradient(160deg, var(--bg-white) 0%, var(--primary-pale) 50%, #DBEAFE 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(37,99,235,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .hero-content { position: relative; z-index: 2; }
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        .hero-title span { color: var(--primary); }
+        .hero-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+        .btn-primary-custom {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(37,99,235,0.3);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary-custom:hover {
+            background: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 35px rgba(37,99,235,0.4);
+        }
+        .hero-image-col { position: relative; z-index: 2; }
+        .hero-image-wrapper {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(37,99,235,0.12);
+            border: 4px solid var(--bg-white);
+        }
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ==================== KEUNGGULAN ==================== */
+        .keunggulan-section {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+        .section-label::before {
+            content: '';
+            width: 28px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        .section-title {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .keunggulan-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px 28px;
+            text-align: center;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        .keunggulan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(37,99,235,0.1);
+            border-color: var(--primary-light);
+        }
+        .keunggulan-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 18px;
+            background: var(--primary-pale);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        .keunggulan-card:hover .keunggulan-icon {
+            background: var(--primary);
+        }
+        .keunggulan-icon i {
+            font-size: 1.6rem;
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+        .keunggulan-card:hover .keunggulan-icon i { color: #fff; }
+        .keunggulan-card h6 {
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        .keunggulan-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* ==================== PRODUK ==================== */
+        .produk-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+        .produk-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .produk-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(37,99,235,0.1);
+            border-color: var(--primary-light);
+        }
+        .produk-img-wrapper {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .produk-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .produk-card:hover .produk-img-wrapper img {
+            transform: scale(1.08);
+        }
+        .produk-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: var(--primary);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 5px 14px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .produk-body {
+            padding: 22px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .produk-body h5 {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+        .produk-body p {
+            color: var(--text-muted);
+            font-size: 0.83rem;
+            line-height: 1.7;
+            flex: 1;
+        }
+        .btn-detail {
+            background: var(--primary-pale);
+            color: var(--primary);
+            border: none;
+            padding: 9px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.82rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+            align-self: flex-start;
+        }
+        .btn-detail:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* ==================== KONSULTASI ==================== */
+        .konsultasi-section {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+        .konsultasi-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 24px;
+            padding: 60px 50px;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .konsultasi-card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+        .konsultasi-card::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 20%;
+            width: 180px;
+            height: 180px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .konsultasi-card h3 {
+            font-weight: 800;
+            font-size: 2rem;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+        .konsultasi-card p {
+            opacity: 0.9;
+            font-size: 1rem;
+            line-height: 1.8;
+            max-width: 550px;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 30px;
+        }
+        .btn-white {
+            background: #fff;
+            color: var(--primary);
+            border: none;
+            padding: 14px 40px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            position: relative;
+            z-index: 1;
+        }
+        .btn-white:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* ==================== PROFIL ==================== */
+        .profil-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+        .profil-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: 0 10px 60px rgba(0,0,0,0.04);
+        }
+        .profil-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+        .profil-header i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        .profil-header h5 {
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 0;
+            font-size: 1.15rem;
+        }
+        .biodata-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .biodata-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 13px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+        .biodata-list li:last-child { border-bottom: none; }
+        .biodata-list li i {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-top: 2px;
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .biodata-list .bio-label {
+            font-weight: 600;
+            color: var(--accent);
+            min-width: 130px;
+        }
+        .biodata-list .bio-value { color: var(--text); }
+        .profil-divider {
+            border: none;
+            border-top: 1px solid var(--border);
+            margin: 28px 0;
+        }
+        .story-text {
+            color: var(--text);
+            font-size: 0.92rem;
+            line-height: 2;
+            margin: 0;
+        }
+
+        /* ==================== KONTAK ==================== */
+        .kontak-section {
+            padding: 80px 0;
+            background: var(--bg-white);
+        }
+        .kontak-card {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px 28px;
+            text-align: center;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+        .kontak-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 50px rgba(37,99,235,0.1);
+            border-color: var(--primary-light);
+            background: var(--bg-white);
+        }
+        .kontak-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 18px;
+            background: var(--primary-pale);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            transition: all 0.3s ease;
+        }
+        .kontak-card:hover .kontak-icon { background: var(--primary); }
+        .kontak-icon i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+        .kontak-card:hover .kontak-icon i { color: #fff; }
+        .kontak-card h6 {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .kontak-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+        .kontak-card a {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .kontak-card a:hover { color: var(--primary-dark); }
+
+        /* ==================== FOOTER ==================== */
+        .footer {
+            background: var(--accent);
+            color: rgba(255,255,255,0.5);
+            padding: 28px 0;
+            text-align: center;
+            font-size: 0.82rem;
+        }
+        .footer strong { color: var(--primary-light); }
+
+        /* ==================== SCROLL TO TOP ==================== */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 25px rgba(37,99,235,0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        .scroll-top-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        .scroll-top-btn.show { display: inline-flex; }
+
+        /* ==================== ANIMATIONS ==================== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 991px) {
+            .hero-title { font-size: 2.4rem; }
+            .hero-image-wrapper img { height: 300px; }
+            .konsultasi-card { padding: 40px 28px; }
+            .konsultasi-card h3 { font-size: 1.6rem; }
+            .profil-card { padding: 32px 24px; }
+        }
+        @media (max-width: 767px) {
+            .hero-section { padding: 120px 0 60px; }
+            .hero-title { font-size: 1.9rem; }
+            .section-title { font-size: 1.7rem; }
+            .hero-image-col { margin-top: 40px; }
+            .profil-card { padding: 24px 18px; }
+            .biodata-list .bio-label { min-width: 110px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+        <div class="container">
+            <a class="navbar-brand" href="#beranda">
+                <i class="bi bi-plug-fill" style="color:var(--primary);"></i> Elektronik <span>Zone</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#beranda">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#keunggulan">Keunggulan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#konsultasi">Konsultasi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#profil">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero-section" id="beranda">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <div class="hero-label">
+                        <i class="bi bi-lightning-fill"></i> Toko Alat Elektronik Terpercaya
+                    </div>
+                    <h1 class="hero-title">
+                        Solusi Kebutuhan<br><span>Alat Elektronik Anda</span>
+                    </h1>
+                    <p class="hero-desc">
+                        Menyediakan berbagai alat elektronik berkualitas 
+                        dengan harga terjangkau dan garansi terpercaya untuk kebutuhan rumah tangga Anda.
+                    </p>
+                    <a href="#konsultasi" class="btn-primary-custom">
+                        Konsultasi <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="col-lg-6 hero-image-col">
+                    <div class="hero-image-wrapper">
+                        <img src="alat elektronik.jpeg" alt="Berkah Elektronik Hero">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== KEUNGGULAN ==================== -->
+    <section class="keunggulan-section" id="keunggulan">
+        <div class="container">
+            <div class="text-center mb-5 fade-up">
+                <div class="section-label justify-content-center">Keunggulan Kami</div>
+                <h2 class="section-title">Mengapa Memilih Kami?</h2>
+                <p class="section-desc mx-auto">
+                    Kami berkomitmen memberikan alat elektronik dan layanan terbaik untuk setiap pelanggan.
+                </p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 fade-up">
+                    <div class="keunggulan-card">
+                        <div class="keunggulan-icon"><i class="bi bi-award-fill"></i></div>
+                        <h6>Barang Berkualitas</h6>
+                        <p>Setiap alat elektronik yang kami jual telah melalui seleksi ketat untuk menjamin kualitas terbaik.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-up" style="transition-delay:0.1s;">
+                    <div class="keunggulan-card">
+                        <div class="keunggulan-icon"><i class="bi bi-shield-check"></i></div>
+                        <h6>Garansi 1 Tahun</h6>
+                        <p>Setiap pembelian alat elektronik dilengkapi garansi resmi selama 1 tahun penuh.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-up" style="transition-delay:0.2s;">
+                    <div class="keunggulan-card">
+                        <div class="keunggulan-icon"><i class="bi bi-tags-fill"></i></div>
+                        <h6>Harga Terjangkau</h6>
+                        <p>Harga kompetitif dan bersaing tanpa mengorbankan kualitas alat elektronik yang dijual.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 fade-up" style="transition-delay:0.3s;">
+                    <div class="keunggulan-card">
+                        <div class="keunggulan-icon"><i class="bi bi-recycle"></i></div>
+                        <h6>Ramah Lingkungan</h6>
+                        <p>Produk yang kami jual hemat energi dan pengemasan menggunakan bahan ramah lingkungan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRODUK (6 produk) ==================== -->
+    <section class="produk-section" id="produk">
+        <div class="container">
+            <div class="text-center mb-5 fade-up">
+                <div class="section-label justify-content-center">Kategori Produk</div>
+                <h2 class="section-title">Produk Elektronik Kami</h2>
+                <p class="section-desc mx-auto">
+                    Temukan berbagai kategori alat elektronik sesuai kebutuhan rumah tangga Anda.
+                </p>
+            </div>
+            <div class="row g-4">
+                <!-- Produk 1 -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="produk-card">
+                        <div class="produk-img-wrapper">
+                            <img src="mesin cuci.jpg" alt="Produk Mesin Cuci">
+                            <span class="produk-badge">Populer</span>
+                        </div>
+                        <div class="produk-body">
+                            <h5>Produk Mesin Cuci</h5>
+                            <p>Berbagai pilihan mesin cuci dari brand terkenal untuk kebutuhan mencuci rumah tangga.</p>
+                            <a href="#" class="btn-detail">Detail <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produk 2 -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay:0.1s;">
+                    <div class="produk-card">
+                        <div class="produk-img-wrapper">
+                            <img src="kulkas.png" alt="Produk Kulkas">
+                            <span class="produk-badge">Terbaru</span>
+                        </div>
+                        <div class="produk-body">
+                            <h5>Produk Kulkas</h5>
+                            <p>Koleksi kulkas terbaru dengan kapasitas besar dan fitur pendingin hemat energi.</p>
+                            <a href="#" class="btn-detail">Detail <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produk 3 -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay:0.2s;">
+                    <div class="produk-card">
+                        <div class="produk-img-wrapper">
+                            <img src="ac.jpg" alt="Produk AC">
+                            <span class="produk-badge">Promo</span>
+                        </div>
+                        <div class="produk-body">
+                            <h5>Produk AC</h5>
+                            <p>Pilihan AC split dan portable dengan pendingin cepat serta konsumsi listrik rendah.</p>
+                            <a href="#" class="btn-detail">Detail <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produk 4 -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="produk-card">
+                        <div class="produk-img-wrapper">
+                            <img src="tv.jpg" alt="Produk TV">
+                            <span class="produk-badge">Diskon</span>
+                        </div>
+                        <div class="produk-body">
+                            <h5>Produk TV LED</h5>
+                            <p>TV LED dan Smart TV dengan resolusi tinggi untuk pengalaman menonton yang memukau di rumah.</p>
+                            <a href="#" class="btn-detail">Detail <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produk 5 -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay:0.1s;">
+                    <div class="produk-card">
+                        <div class="produk-img-wrapper">
+                            <img src="microwave.jpg" alt="Produk Microwave">
+                            <span class="produk-badge">Baru</span>
+                        </div>
+                        <div class="produk-body">
+                            <h5>Produk Microwave</h5>
+                            <p>Microwave dan oven listrik untuk memasak dan menghangatkan makanan dengan cepat dan praktis.</p>
+                            <a href="#" class="btn-detail">Detail <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produk 6 -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay:0.2s;">
+                    <div class="produk-card">
+                        <div class="produk-img-wrapper">
+                            <img src="setrika.jpg" alt="Produk Setrika">
+                            <span class="produk-badge">Murah</span>
+                        </div>
+                        <div class="produk-body">
+                            <h5>Produk Setrika</h5>
+                            <p>Setrika listrik dan uap dengan fitur anti lengket untuk merapikan pakaian dengan mudah.</p>
+                            <a href="#" class="btn-detail">Detail <i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== KONSULTASI ==================== -->
+    <section class="konsultasi-section" id="konsultasi">
+        <div class="container">
+            <div class="konsultasi-card fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h3>Butuh Bantuan Memilih Alat Elektronik?</h3>
+                        <p>
+                            Tim kami siap membantu Anda menemukan alat elektronik yang paling sesuai 
+                            dengan kebutuhan dan budget Anda. Konsultasi gratis tanpa komitmen.
+                        </p>
+                        <a href="https://wa.me/088707082727" target="_blank" class="btn-white">
+                            <i class="bi bi-chat-dots-fill"></i> Konsultasi
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROFIL ==================== -->
+    <section class="profil-section" id="profil">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9 fade-up">
+                    <div class="profil-card">
+                        <div class="profil-header">
+                            <i class="bi bi-person-vcard-fill"></i>
+                            <h5>Biodata Diri</h5>
+                        </div>
+                        <ul class="biodata-list">
+                            <li>
+                                <i class="bi bi-upc-scan"></i>
+                                <span class="bio-label">NPM</span>
+                                <span class="bio-value">24312115</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-person-fill"></i>
+                                <span class="bio-label">Nama</span>
+                                <span class="bio-value">Rizki Zonanta Wichaksana</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span class="bio-label">TTL</span>
+                                <span class="bio-value">Lampung, 13 Juni 2006</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-gender-male"></i>
+                                <span class="bio-label">Jenis Kelamin</span>
+                                <span class="bio-value">Laki-laki</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-building"></i>
+                                <span class="bio-label">Jurusan</span>
+                                <span class="bio-value">Informatika</span>
+                            </li>
+                        </ul>
+                        <hr class="profil-divider">
+                        <div class="profil-header">
+                            <i class="bi bi-chat-quote-fill"></i>
+                            <h5>Tentang Saya</h5>
+                        </div>
+                        <p class="story-text">
+                            Saya Rizki Zonanta, mahasiswa Informatika. Saya lahir dan besar di Lampung. 
+                            Sejak kecil saya memiliki ketertarikan dengan berbagai peralatan elektronik rumah tangga. 
+                            Saya sering membantu orang tua memilih dan memperbaiki alat elektronik di rumah. 
+                            Minat inilah yang membawa saya mempelajari dunia digital dan pemrograman di bangku kuliah. 
+                            Saat ini saya menjalankan toko online bernama Berkah Elektronik sebagai wadah belajar 
+                            sekaligus usaha. Cita-cita saya adalah mengembangkan sistem informasi yang membantu 
+                            masyarakat dalam memilih alat elektronik yang tepat dan hemat energi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== KONTAK (Hanya WA, IG, TikTok) ==================== -->
+    <section class="kontak-section" id="kontak">
+        <div class="container">
+            <div class="text-center mb-5 fade-up">
+                <div class="section-label justify-content-center">Hubungi Kami</div>
+                <h2 class="section-title">Media Sosial & Kontak</h2>
+                <p class="section-desc mx-auto">
+                    Jangan ragu untuk menghubungi kami melalui platform di bawah ini.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- WhatsApp -->
+                <div class="col-lg-4 col-md-6 fade-up">
+                    <div class="kontak-card">
+                        <div class="kontak-icon"><i class="bi bi-whatsapp"></i></div>
+                        <h6>WhatsApp</h6>
+                        <p>Chat langsung dengan kami</p>
+                        <a href="https://wa.me/088707082727" target="_blank">+62 812-3456-7890</a>
+                    </div>
+                </div>
+                <!-- Instagram -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay:0.1s;">
+                    <div class="kontak-card">
+                        <div class="kontak-icon"><i class="bi bi-instagram"></i></div>
+                        <h6>Instagram</h6>
+                        <p>Follow kami di Instagram</p>
+                        <a href="https://www.instagram.com/rizkizonanta.w?igsh=MXB3bXhvZjR0YXFhNw==" target="_blank">@berkah.elektronik</a>
+                    </div>
+                </div>
+                <!-- TikTok -->
+                <div class="col-lg-4 col-md-6 fade-up" style="transition-delay:0.2s;">
+                    <div class="kontak-card">
+                        <div class="kontak-icon"><i class="bi bi-tiktok"></i></div>
+                        <h6>TikTok</h6>
+                        <p>Lihat konten video kami</p>
+                        <a href="https://www.tiktok.com/@zoon311?_r=1&_t=ZS-95S2KVv0cWC" target="_blank">@berkah.elektronik</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">
+                &copy; 2026 Pemrograman Web <strong>24312115_Rizki Zonanta Wichaksana</strong>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==================== SCROLL TO TOP ==================== -->
+    <button class="scroll-top-btn" id="scrollTopBtn" title="Kembali ke atas">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('mainNavbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Active nav link on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+                if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    const navCollapse = document.getElementById('navMenu');
+                    const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+                    if (bsCollapse) bsCollapse.hide();
+                }
+            });
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            scrollTopBtn.classList.toggle('show', window.scrollY > 400);
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Fade-up animation
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+        fadeEls.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
